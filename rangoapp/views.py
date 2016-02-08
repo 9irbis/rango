@@ -14,7 +14,12 @@ def index(request):
 
 
 def about(request):
-    return render(request, 'rangoapp/about.html', {})
+    count = request.session.get('visits')
+    if not count:
+        count = 0
+    count += 1
+    request.session['visits'] = count 
+    return render(request, 'rangoapp/about.html', {'visits': count})
 
 
 def category(request, category_name_slug):
