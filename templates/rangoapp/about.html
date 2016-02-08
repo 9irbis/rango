@@ -1,12 +1,6 @@
-<!DOCTYPE html>
-{% load staticfiles %}
-<html>
-<head>
-    <title>Rango | About</title>
-</head>
-<body>
+{% extends 'rangoapp/base.html' %}
+{% block head_title %} | About{%  endblock %}
+{% block body_block %}
     <h1>Rango, a place to categorize webpages</h1>
-    <a href="/rango/">Home</a>
-    <img src="{% static 'images/nakul.jpg' %}" alt="author's pic"/>
-</body>
-</html>
+    <p>Rango is a spanish word meaning class, degree or rank. True to its name, this website allows registered users to categorize webpages based on what topic they are about. Each category has a list of web pages associated with it which are ranked according to the number of times they are viewed. The categories themselves are ranked according to their number of likes.</p>
+{% endblock %}

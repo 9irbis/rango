@@ -14,7 +14,7 @@ def index(request):
 
 
 def about(request):
-    return render(request, 'rangoapp/about.html')
+    return render(request, 'rangoapp/about.html', {})
 
 
 def category(request, category_name_slug):

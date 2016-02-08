@@ -1,9 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Rango</title>
-</head>
-<body>
+{% extends 'rangoapp/base.html' %}
+{% block head_title %} | Categorize Webpages{% endblock %}
+{% block body_block %}
     {% if user.is_authenticated %}
         <h1>Rango says...hello, {{ user.username }}!</h1>
     {% else %}
@@ -13,7 +10,7 @@
     {% if categories %}
         <ul>
             {% for category in categories %}
-                <li><a href="/rango/category/{{ category.slug }}">{{ category.name }}</a></li>
+                <li><a href="{% url 'rango_nspc:category' category.slug %}">{{ category.name }}</a></li>
             {% endfor %}
         </ul>
     {% else %}
@@ -30,14 +27,4 @@
     {% else %}
         <strong>There are no pages at present.</strong>
     {% endif %}
-
-    {% if user.is_authenticated %}
-        <a href="/rango/add_category/">Add a new category</a><br/>
-        <a href="/rango/logout/">Logout</a><br />
-    {% else %}
-        <a href="/rango/register/">Register here</a><br />
-        <a href="/rango/login/">Login here</a><br />
-    {% endif %}        
-    <a href="/rango/about/">About</a><br/>
-</body>
-</html>
+{% endblock %}

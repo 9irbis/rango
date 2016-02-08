@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Rango{% block head_title %}{% endblock %}</title>
+</head>
+<body>
+    <div>
+        {% block body_block %}
+        {% endblock %}
+    </div>
+    <hr />
+    <div>
+        <ul>
+            {% if user.is_authenticated %}
+                <li><a href="{% url 'rango_nspc:logout' %}">Logout</a></li>
+                <li><a href="{% url 'rango_nspc:add_category' %}">Add Category</a></li>
+            {% else %}
+                <li><a href="{% url 'rango_nspc:register' %}">Register Here</a></li>
+                <li><a href="{% url 'rango_nspc:login' %}">Login</a></li>
+            {% endif %}
+                <li><a href="{% url 'rango_nspc:about' %}">About</a></li>
+                <li><a href="{% url 'rango_nspc:index' %}">Home</a></li>
+        </ul>
+    </div>
+</body>
+</html>
