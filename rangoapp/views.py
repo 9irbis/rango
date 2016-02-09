@@ -18,7 +18,7 @@ def about(request):
     if not count:
         count = 0
     count += 1
-    request.session['visits'] = count 
+    request.session['visits'] = count
     return render(request, 'rangoapp/about.html', {'visits': count})
 
 

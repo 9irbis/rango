@@ -13,11 +13,11 @@
     <div>
         <ul>
             {% if user.is_authenticated %}
-                <li><a href="{% url 'rango_nspc:logout' %}">Logout</a></li>
+                <li><a href="{% url 'auth_logout' %}?next=/rango">Logout</a></li>
                 <li><a href="{% url 'rango_nspc:add_category' %}">Add Category</a></li>
             {% else %}
-                <li><a href="{% url 'rango_nspc:register' %}">Register Here</a></li>
-                <li><a href="{% url 'rango_nspc:login' %}">Login</a></li>
+                <li><a href="{% url 'registration_register' %}">Register Here</a></li>
+                <li><a href="{% url 'auth_login' %}">Login</a></li>
             {% endif %}
                 <li><a href="{% url 'rango_nspc:about' %}">About</a></li>
                 <li><a href="{% url 'rango_nspc:index' %}">Home</a></li>
