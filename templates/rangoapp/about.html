@@ -1,7 +1,11 @@
 {% extends 'rangoapp/base.html' %}
-{% block head_title %} | About{%  endblock %}
+{% load staticfiles %}
+{% block title_block %} | About{%  endblock %}
 {% block body_block %}
+<div class="page-header text-center">
     <h1>Rango, a place to categorize webpages</h1>
+</div>
     <p>Rango is a spanish word meaning class, degree or rank. True to its name, this website allows registered users to categorize webpages based on what topic they are about. Each category has a list of web pages associated with it which are ranked according to the number of times they are viewed. The categories themselves are ranked according to their number of likes.</p>
-    <p>You have visited this page {{ visits }} times.</p>
+    <!--<p>You have visited this page {{ visits }} times.</p>-->
+    <img width="460" height="430" src="{% static 'images/rango.jpg' %}" alt="rango, the chameleon">
 {% endblock %}

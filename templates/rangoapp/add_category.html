@@ -1,7 +1,9 @@
 {% extends 'rangoapp/base.html' %}
-{% block head_title %} | Add a New Category{% endblock %}
+{% block title_block %} | Add a New Category{% endblock %}
 {% block body_block %}
+<div class="page-header text-center">
     <h1>Add a category</h1>
+</div>
     <form method="post" action="{% url 'rango_nspc:add_category' %}" id="category_form">
         {% csrf_token %}
         {% for hidden in form.hidden_fields %}
@@ -13,6 +15,6 @@
             {{ field.help_text }}
             {{ field }}
         {% endfor %}
-        <input type="submit" value="Create Category" />
+        <button class="btn btn-primary" type="submit" name="submit">Add Category</button>
     </form>
 {% endblock %}

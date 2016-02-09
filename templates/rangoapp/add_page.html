@@ -1,7 +1,9 @@
 {% extends 'rangoapp/base.html' %}
-{% block head_title %} | {{ category.name }} | Add Page{% endblock %}
+{% block title_block %} | {{ category.name }} | Add Page{% endblock %}
 {% block body_block %}
-    <h1>Add a page to category {{ category.name }}</h1>
+<div class="page-header text-center">
+    <h1>Add New Page to Category {{ category.name }}</h1>
+</div>
     <form method="post" action="{% url 'rango_nspc:add_page' category.slug %}" id="page_form">
         {% csrf_token %}
         {% for hidden in form.hidden_fields %}
@@ -12,6 +14,6 @@
             {{ field.help_text }}
             {{ field }}
         {% endfor %}
-        <input type="submit" value="Add Page" />
+        <button class="btn btn-primary" name="submit" type="submit">Add Page</button>
     </form>
 {% endblock %}
