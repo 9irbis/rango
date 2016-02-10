@@ -1,0 +1,12 @@
+{% if all_cats %}
+    <ul class="nav nav-sidebar">
+        {% for cat in all_cats %}
+            {% if cat == act_cat %}<li class="active">{% else %}<li>{% endif %}
+            <a href="{% url 'rango_nspc:category' cat.slug %}">{{ cat.name }}</a></li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <ul class="nav nav-sidebar">
+            <li><strong>No categories at present</strong></li>
+    </ul>
+{% endif %}
