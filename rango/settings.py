@@ -41,11 +41,7 @@ INSTALLED_APPS = (
     'registration',
 )
 
-REGISTRATION_OPEN = True
-ACCOUNT_ACTIVATION_DAYS = 7
-REGISTRATION_AUTO_LOGIN = True
-LOGIN_REDIRECT_URL = '/rango/'
-LOGIN_URL = '/accounts/login/'
+LOGIN_URL = '/rango/login/'
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',

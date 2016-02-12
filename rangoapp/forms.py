@@ -32,6 +32,7 @@ class PageForm(forms.ModelForm):
         return cleaned_data
 
 
+# not needed anymore, using django-registration-redux package
 class UserForm(forms.ModelForm):
     password = forms.CharField(widget=forms.PasswordInput())
 

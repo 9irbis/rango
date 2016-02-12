@@ -1,18 +1,17 @@
-<!-- This template is no longer in use
-
 {% extends 'rangoapp/base.html' %}
 {% block head_title %} | Register{% endblock %}
 {% block body_block %}
-    <h1>Register with Rango</h1>
-    {% if registered %}
-        Rango says <strong>thank you for registering!</strong>
+    <div class="page-header text-center">
+        <h1>Register with Rango</h1>
+    </div>
+    {% if user.is_authenticated %}
+        <strong>You are already registered!</strong>
     {% else %}
-        Rango says <strong>register here!</strong>
-        <form method="post" action="{% url 'rango_nspc:register' %}" id="user_form" enctype="multipart/form-data">
+        <form method="post" action="{% url 'rango_nspc:register' %}" id="registration_form" enctype="multipart/form-data">
             {% csrf_token %}
             {{ user_form.as_p }}
             {{ profile_form.as_p }}
-            <input type="submit" value="register" />
+            <input class="btn btn-primary" type="submit" value="Register" />
         </form>
     {% endif %}
-{% endblock %}         -->
+{% endblock %}
