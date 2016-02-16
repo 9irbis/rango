@@ -1,0 +1,7 @@
+{% if cat_list %}
+    <ul class="nav nav-sidebar">
+        {% for cat in cat_list %}
+            <li><a href="{% url 'rango_nspc:category' cat.slug %}">{{ cat.name }}</a></li>
+        {% endfor %}
+    </ul>
+{% endif %}
